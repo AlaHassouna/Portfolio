@@ -707,15 +707,15 @@
 
                 <!-- Architecture Diagram -->
                 <div class="architecture-section">
-                    <h3 class="architecture-title">Architecture de l'Analyse Sentimentale</h3>
+                    <h3 class="architecture-title" data-fr="Architecture de l'Analyse Sentimentale" data-en="Sentiment Analysis Architecture">Architecture de l'Analyse Sentimentale</h3>
                     <div class=" ">
                         <div class="true-pipeline-flow">
                             
                             <!-- Step 0: Input -->
                             <div class="flow-step input-step" data-aos="fade-up">
-                                <div class="step-badge">Entrée</div>
-                                <h4>Réponses d'une question</h4>
-                                <p>Toutes les réponses textuelles reçues</p>
+                                <div class="step-badge" data-fr="Entrée" data-en="Input">Entrée</div>
+                                <h4 data-fr="Réponses d'une question" data-en="Question Responses">Réponses d'une question</h4>
+                                <p data-fr="Toutes les réponses textuelles reçues" data-en="All text responses received">Toutes les réponses textuelles reçues</p>
                             </div>
                             
                             <div class="flow-arrow">↓</div>
@@ -723,9 +723,9 @@
                             <!-- Step 1: Summarization -->
                             <div class="flow-step model-step" data-aos="fade-up" data-aos-delay="100">
                                 <div class="step-number">1</div>
-                                <h4>Résumé</h4>
+                                <h4 data-fr="Résumé" data-en="Summary">Résumé</h4>
                                 <div class="model-name">T5-base</div>
-                                <p>Réduire les réponses longues et le bruit</p>
+                                <p data-fr="Réduire les réponses longues et le bruit" data-en="Reduce long responses and noise">Réduire les réponses longues et le bruit</p>
                             </div>
                             
                             <div class="flow-arrow">↓</div>
@@ -733,9 +733,9 @@
                             <!-- Step 2: Fact or Opinion -->
                             <div class="flow-step model-step" data-aos="fade-up" data-aos-delay="200">
                                 <div class="step-number">2</div>
-                                <h4>Classification Opinion / Fait</h4>
+                                <h4 data-fr="Classification Opinion / Fait" data-en="Opinion / Fact Classification">Classification Opinion / Fait</h4>
                                 <div class="model-name">fact-or-opinion-xlm-r-el</div>
-                                <p>Chaque réponse classée en "Opinion" ou "Fait"</p>
+                                <p data-fr="Chaque réponse classée en 'Opinion' ou 'Fait'" data-en="Each response classified as 'Opinion' or 'Fact'">Chaque réponse classée en "Opinion" ou "Fait"</p>
                             </div>
                             
                             <div class="flow-arrow">↓</div>
@@ -751,16 +751,16 @@
                                 <div class="decision-branches">
                                     <div class="decision-branch left">
                                         <div class="stop-node">
-                                            <span>🚫 Stop</span>
-                                            <small>Question ignorée</small>
+                                            <span data-fr="🚫 Stop" data-en="🚫 Stop">🚫 Stop</span>
+                                            <small data-fr="Question ignorée" data-en="Question skipped">Question ignorée</small>
                                         </div>
                                         <div class="branch-arrow">←</div>
-                                        <span class="branch-label">Non (&lt; 80%)</span>
+                                        <span class="branch-label" data-fr="Non (< 80%)" data-en="No (< 80%)">Non (&lt; 80%)</span>
                                     </div>
                                     <div class="decision-branch right">
-                                        <span class="branch-label">Oui (≥ 80%)</span>
+                                        <span class="branch-label" data-fr="Oui (≥ 80%)" data-en="Yes (≥ 80%)">Oui (≥ 80%)</span>
                                         <div class="branch-arrow down">↓</div>
-                                        <span class="continue-label">Continuer</span>
+                                        <span class="continue-label" data-fr="Continuer" data-en="Continue">Continuer</span>
                                         <div class="branch-arrow down">↓</div>
                                     </div>
                                 </div>
@@ -771,27 +771,27 @@
                             <!-- Step 3: Language Detection -->
                             <div class="flow-step model-step" data-aos="fade-up" data-aos-delay="400">
                                 <div class="step-number">3</div>
-                                <h4>Détection Linguistique</h4>
+                                <h4 data-fr="Détection Linguistique" data-en="Language Detection">Détection Linguistique</h4>
                                 <div class="model-name">xlm-roberta-base-language-detection</div>
-                                <p>Identifier la langue de chaque réponse</p>
+                                <p data-fr="Identifier la langue de chaque réponse" data-en="Identify the language of each response">Identifier la langue de chaque réponse</p>
                             </div>
                             
                             <div class="flow-arrow">↓</div>
                             
                             <!-- Step 4: Language Branching -->
                             <div class="flow-branching" data-aos="fade-up" data-aos-delay="500">
-                                <div class="branch-title">Séparation par langue</div>
+                                <div class="branch-title" data-fr="Séparation par langue" data-en="Language Separation">Séparation par langue</div>
                                 <div class="language-branches">
                                     
                                     <!-- Branch 1: Arabic -->
                                     <div class="lang-branch arabic">
                                         <div class="branch-header">
                                             <span class="flag">AR</span>
-                                            <h5>Arabe</h5>
+                                            <h5 data-fr="Arabe" data-en="Arabic">Arabe</h5>
                                         </div>
                                         <div class="branch-model">
                                             <div class="model-badge">arabic-MARBERT-sentiment</div>
-                                            <p>Sentiment spécifique arabe</p>
+                                            <p data-fr="Sentiment spécifique arabe" data-en="Arabic-specific sentiment">Sentiment spécifique arabe</p>
                                         </div>
                                     </div>
                                     
@@ -803,7 +803,7 @@
                                         </div>
                                         <div class="branch-model">
                                             <div class="model-badge">bert-base-multilingual-uncased-sentiment</div>
-                                            <p>Analyse multilingue</p>
+                                            <p data-fr="Analyse multilingue" data-en="Multilingual analysis">Analyse multilingue</p>
                                         </div>
                                     </div>
                                     
@@ -816,9 +816,9 @@
                             
                             <!-- Final Step: Output -->
                             <div class="flow-step output-step" data-aos="fade-up" data-aos-delay="600">
-                                <div class="step-badge">Sortie</div>
-                                <h4>Résultat Sentiment</h4>
-                                <p>Score sentiment + Distribution + Résumé</p>
+                                <div class="step-badge" data-fr="Sortie" data-en="Output">Sortie</div>
+                                <h4 data-fr="Résultat Sentiment" data-en="Sentiment Result">Résultat Sentiment</h4>
+                                <p data-fr="Score sentiment + Distribution + Résumé" data-en="Sentiment score + Distribution + Summary">Score sentiment + Distribution + Résumé</p>
                                 <div class="output-icons">
                                     <span>😊</span>
                                     <span>😐</span>
