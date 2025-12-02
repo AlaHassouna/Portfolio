@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ala HSOUNA - Capgemini Engineering PFE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Ala <strong>HSOUNA</strong></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link active" data-fr="À propos" data-en="About">À propos</a></li>
+                <li><a href="#capgemini" class="nav-link" data-fr="Pourquoi Capgemini ?" data-en="Why Capgemini?">Pourquoi Capgemini ?</a></li>
+                <li><a href="#pfe" class="nav-link" data-fr="Sujet PFE" data-en="PFE Topic">Sujet PFE</a></li>
+                <li><a href="#contact" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+            <div class="language-toggle">
+                <button class="lang-btn active" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="presentation-btn" id="presentationBtn" title="Mode Présentation">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+                <span data-fr="Présentation" data-en="Presentation">Présentation</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Presentation Controls -->
+    <div class="presentation-controls" id="presentationControls">
+        <button class="nav-arrow nav-prev" id="prevSlide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <div class="slide-indicator" id="slideIndicator">
+            <span class="current-slide">1</span> / <span class="total-slides">3</span>
+        </div>
+        <button class="nav-arrow nav-next" id="nextSlide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <button class="exit-presentation" id="exitPresentation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span data-fr="Quitter" data-en="Exit">Quitter</span>
+        </button>
+    </div>
+
+    <!-- Scroll Indicator for Presentation Mode -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </div>
+
+    <!-- Interface 1: About Ala -->
+    <section id="about" class="section hero-section">
+        <div class="hero-background">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-name fade-in">Ala <span class="highlight">HSOUNA</span></h1>
+                    <p class="hero-location fade-in-delay-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Kelibia / Nabeul
+                    </p>
+                    <p class="hero-tagline fade-in-delay-2" data-fr="Ingénieur en génie logiciel & informatique décisionnelle – passionné par l'IA, le NLP et les applications web intelligentes." data-en="Software & AI Engineer – passionate about NLP, data and intelligent web applications.">
+                        Ingénieur en génie logiciel & informatique décisionnelle – passionné par l'IA, le NLP et les applications web intelligentes.
+                    </p>
+                    <p class="hero-status fade-in-delay-3" data-fr="Étudiant en dernière année d'ingénierie, candidat au PFE chez Capgemini Engineering." data-en="Final-year engineering student, PFE candidate at Capgemini Engineering.">
+                        Étudiant en dernière année d'ingénierie, candidat au PFE chez Capgemini Engineering.
+                    </p>
+                    <div class="hero-buttons fade-in-delay-4">
+                        <a href="#contact" class="btn btn-primary" data-fr="Télécharger mon CV" data-en="Download my CV">Télécharger mon CV</a>
+                        <a href="#projects" class="btn btn-secondary" data-fr="Voir mes projets IA" data-en="View my AI projects">Voir mes projets IA</a>
+                    </div>
+                </div>
+                <div class="hero-avatar">
+                    <div class="avatar-container">
+                        <div class="avatar-circle">
+                            <div class="avatar-photo-wrapper">
+                                <img src="Profil.png" alt="Ala HSOUNA" class="avatar-photo">
+                            </div>
+                        </div>
+                        <div class="avatar-decoration decoration-1"></div>
+                        <div class="avatar-decoration decoration-2"></div>
+                        <div class="avatar-decoration decoration-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Journey -->
+        <div class="container section-content">
+            <h2 class="section-title" data-fr="Parcours Académique" data-en="Academic Journey">Parcours Académique</h2>
+            <div class="timeline">
+                <div class="timeline-item card-3d">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title" data-fr="Lycée - Baccalauréat en Mathématiques" data-en="High School - Mathematics">Lycée - Baccalauréat en Mathématiques</h3>
+                        <p class="timeline-year">2020</p>
+                    </div>
+                </div>
+                <div class="timeline-item card-3d">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title" data-fr="Licence en Sciences Informatiques" data-en="Bachelor's in Computer Science">Licence en Sciences Informatiques</h3>
+                        <p class="timeline-subtitle" data-fr="Spécialité Big Data et Analyse de Données" data-en="Specialization: Big Data and Data Analysis">Spécialité Big Data et Analyse de Données</p>
+                        <p class="timeline-location" data-fr="Institut Supérieur d'Informatique et de Multimédia de Sfax" data-en="Higher Institute of Computer Science and Multimedia of Sfax">Institut Supérieur d'Informatique et de Multimédia de Sfax</p>
+                        <p class="timeline-description" data-fr="Diplômé avec mention Très Bien, classé 3ᵉ de la promotion." data-en="Graduated with highest honors, ranked 3rd in the class.">Diplômé avec mention Très Bien, classé 3ᵉ de la promotion.</p>
+                    </div>
+                </div>
+                <div class="timeline-item card-3d active">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title" data-fr="Diplôme d'Ingénieur" data-en="Engineering Degree">Diplôme d'Ingénieur</h3>
+                        <p class="timeline-subtitle" data-fr="Génie Logiciel et Informatique Décisionnelle" data-en="Software Engineering and Business Intelligence">Génie Logiciel et Informatique Décisionnelle</p>
+                        <p class="timeline-location" data-fr="Institut International de Technologie (IIT), Sfax" data-en="International Institute of Technology (IIT), Sfax">Institut International de Technologie (IIT), Sfax</p>
+                        <p class="timeline-description" data-fr="Actuellement en dernière année. Première année : moyenne de 16,27/20, 1ᵉʳ de classe et 3ᵉ de promotion. Deuxième année : moyenne de 16/20." data-en="Currently in final year. First year: 16.27/20 average, 1st in class and 3rd in cohort. Second year: 16/20 average.">Actuellement en dernière année. Première année : moyenne de 16,27/20, 1ᵉʳ de classe et 3ᵉ de promotion. Deuxième année : moyenne de 16/20.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="container section-content" id="skills">
+            <h2 class="section-title" data-fr="Compétences Techniques" data-en="Technical Skills">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-card card-3d">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title" data-fr="Langages de Programmation" data-en="Programming Languages">Langages de Programmation</h3>
+                    <ul class="skill-description">
+                        <li data-fr="Maîtrise de plusieurs langages" data-en="Proficient in multiple languages">Maîtrise de plusieurs langages</li>
+                        <li data-fr="Développement full-stack" data-en="Full-stack development">Développement full-stack</li>
+                        <li data-fr="Data science & scripting" data-en="Data science & scripting">Data science & scripting</li>
+                    </ul>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Go</span>
+                    </div>
+                </div>
+
+                <div class="skill-card card-3d">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m-9-9h6m6 0h6M4.93 4.93l4.24 4.24m5.66 5.66l4.24 4.24m0-13.38l-4.24 4.24m-5.66 5.66l-4.24 4.24"></path>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title" data-fr="Frameworks & Bibliothèques" data-en="Frameworks & Libraries">Frameworks & Bibliothèques</h3>
+                    <ul class="skill-description">
+                        <li data-fr="APIs robustes" data-en="Robust APIs">APIs robustes</li>
+                        <li data-fr="Interfaces utilisateur modernes" data-en="Modern user interfaces">Interfaces utilisateur modernes</li>
+                        <li data-fr="Applications multi-plateformes" data-en="Cross-platform applications">Applications multi-plateformes</li>
+                    </ul>
+                    <div class="skill-tags">
+                        <span class="tag">Django</span>
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">React.js</span>
+                        <span class="tag">Angular</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Flutter</span>
+                    </div>
+                </div>
+
+                <div class="skill-card card-3d">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title" data-fr="IA & Data Science" data-en="AI & Data Science">IA & Data Science</h3>
+                    <ul class="skill-description">
+                        <li data-fr="Natural Language Processing (NLP)" data-en="Natural Language Processing (NLP)">Natural Language Processing (NLP)</li>
+                        <li data-fr="Vision par ordinateur" data-en="Computer vision">Vision par ordinateur</li>
+                        <li data-fr="Modèles d'apprentissage profond" data-en="Deep learning models">Modèles d'apprentissage profond</li>
+                    </ul>
+                    <div class="skill-tags">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">TrOCR</span>
+                        <span class="tag">YOLO</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Seaborn</span>
+                        <span class="tag">Roboflow</span>
+                    </div>
+                </div>
+
+                <div class="skill-card card-3d">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title" data-fr="Data / Big Data / BI" data-en="Data / Big Data / BI">Data / Big Data / BI</h3>
+                    <ul class="skill-description">
+                        <li data-fr="Données structurées et non structurées" data-en="Structured and unstructured data">Données structurées et non structurées</li>
+                        <li data-fr="Analyses et ETL" data-en="Analytics and ETL">Analyses et ETL</li>
+                        <li data-fr="Visualisations et dashboards" data-en="Visualizations and dashboards">Visualisations et dashboards</li>
+                    </ul>
+                    <div class="skill-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Hadoop</span>
+                        <span class="tag">Talend</span>
+                        <span class="tag">Power BI</span>
+                    </div>
+                </div>
+
+                <div class="skill-card card-3d">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="skill-title" data-fr="Outils & DevOps" data-en="Tools & DevOps">Outils & DevOps</h3>
+                    <ul class="skill-description">
+                        <li data-fr="Conteneurisation (Docker)" data-en="Containerization (Docker)">Conteneurisation (Docker)</li>
+                        <li data-fr="Versioning & CI/CD" data-en="Versioning & CI/CD">Versioning & CI/CD</li>
+                        <li data-fr="Monitoring et déploiements" data-en="Monitoring and deployments">Monitoring et déploiements</li>
+                    </ul>
+                    <div class="skill-tags">
+                        <span class="tag">Docker</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">Windows Server</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">SSIS</span>
+                        <span class="tag">SSMS</span>
+                        <span class="tag">Grafana</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="container section-content" id="experience">
+            <h2 class="section-title" data-fr="Expériences Professionnelles" data-en="Professional Experience">Expériences Professionnelles</h2>
+            <div class="experience-timeline">
+                <div class="experience-card card-3d">
+                    <div class="experience-header">
+                        <div class="experience-company">SIVO, Sfax</div>
+                        <div class="experience-period">Jan – Jun 2025</div>
+                    </div>
+                    <h3 class="experience-title" data-fr="Stage PFA – Développeur IA" data-en="PFA Internship – AI Developer">Stage PFA – Développeur IA</h3>
+                    <ul class="experience-list" data-fr="fr" data-en="en">
+                        <li data-fr="Fine-tuning de YOLO pour la détection des champs manuscrits." data-en="Fine-tuned YOLO for handwritten field detection.">Fine-tuning de YOLO pour la détection des champs manuscrits.</li>
+                        <li data-fr="Optimisation de modèles TrOCR et BART, avec un taux d'erreur (CER) proche de 0,1." data-en="Optimized TrOCR and BART models, achieving a Character Error Rate close to 0.1.">Optimisation de modèles TrOCR et BART, avec un taux d'erreur (CER) proche de 0,1.</li>
+                        <li data-fr="Développement d'une solution multi-plateforme (Django, Flutter, React) pour exploiter les modèles IA." data-en="Developed a multi-platform solution (Django, Flutter, React) to expose and use the AI models.">Développement d'une solution multi-plateforme (Django, Flutter, React) pour exploiter les modèles IA.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card card-3d">
+                    <div class="experience-header">
+                        <div class="experience-company">Shopy Science, Tunis</div>
+                        <div class="experience-period">Jul – Sep 2024</div>
+                    </div>
+                    <h3 class="experience-title" data-fr="Stage d'été – Développeur Backend & DevOps" data-en="Summer Internship – Backend & DevOps Developer">Stage d'été – Développeur Backend & DevOps</h3>
+                    <ul class="experience-list">
+                        <li data-fr="Automatisation de l'analyse des anomalies, réduisant le temps de vérification de 70 %." data-en="Automated anomaly analysis, reducing verification time by 70%.">Automatisation de l'analyse des anomalies, réduisant le temps de vérification de 70 %.</li>
+                        <li data-fr="Mise en place de dashboards Grafana et d'alertes Slack, améliorant la réactivité face aux bugs de 60 %." data-en="Built Grafana dashboards and Slack alerts, improving bug reaction time by 60%.">Mise en place de dashboards Grafana et d'alertes Slack, améliorant la réactivité face aux bugs de 60 %.</li>
+                        <li data-fr="Suivi automatique des e-mails avec Go, améliorant la détection des baisses de performance de 40 %." data-en="Developed automated email monitoring in Go, improving performance drop detection by 40%.">Suivi automatique des e-mails avec Go, améliorant la détection des baisses de performance de 40 %.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card card-3d">
+                    <div class="experience-header">
+                        <div class="experience-company">MRC Survey, Tunis</div>
+                        <div class="experience-period">Feb – Jun 2023</div>
+                    </div>
+                    <h3 class="experience-title" data-fr="Stage de fin d'études – Développeur Full-Stack & IA" data-en="End-of-Studies Internship – Full-Stack & AI Developer">Stage de fin d'études – Développeur Full-Stack & IA</h3>
+                    <ul class="experience-list">
+                        <li data-fr="Stabilisation de l'application (-80 % de bugs) avec Angular, TypeScript et Node.js." data-en="Stabilized the web application (-80% bugs) using Angular, TypeScript and Node.js.">Stabilisation de l'application (-80 % de bugs) avec Angular, TypeScript et Node.js.</li>
+                        <li data-fr="Création d'un tableau de bord et de chatbots d'assistance et de génération de contenu." data-en="Built dashboards and assistance / content generation chatbots.">Création d'un tableau de bord et de chatbots d'assistance et de génération de contenu.</li>
+                        <li data-fr="Implémentation d'une analyse sentimentale multilingue avec environ 88 % de précision." data-en="Implemented multilingual sentiment analysis with about 88% accuracy.">Implémentation d'une analyse sentimentale multilingue avec environ 88 % de précision.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card card-3d">
+                    <div class="experience-header">
+                        <div class="experience-company">Digi Hornets, Kélibia</div>
+                        <div class="experience-period">Aug – Sep 2022</div>
+                    </div>
+                    <h3 class="experience-title" data-fr="Stage d'été – Développeur Full-Stack" data-en="Summer Internship – Full-Stack Developer">Stage d'été – Développeur Full-Stack</h3>
+                    <ul class="experience-list">
+                        <li data-fr="Développement d'un site e-commerce complet avec panneau d'administration et interface vitrine (stack MERN)." data-en="Developed a full e-commerce website with admin panel and storefront using the MERN stack.">Développement d'un site e-commerce complet avec panneau d'administration et interface vitrine (stack MERN).</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card card-3d">
+                    <div class="experience-header">
+                        <div class="experience-company">North Africa International Bank, Tunis</div>
+                        <div class="experience-period">Aug – Sep 2021</div>
+                    </div>
+                    <h3 class="experience-title" data-fr="Stage d'été – Développeur Data" data-en="Summer Internship – Data Developer">Stage d'été – Développeur Data</h3>
+                    <ul class="experience-list">
+                        <li data-fr="Automatisation du tri des données clients (-80 % temps de traitement) et préparation de données bancaires avec WinDev (≈95 % de précision)." data-en="Automated client data sorting (-80% processing time) and prepared banking datasets with WinDev (≈95% accuracy).">Automatisation du tri des données clients (-80 % temps de traitement) et préparation de données bancaires avec WinDev (≈95 % de précision).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Projects -->
+        <div class="container section-content" id="projects">
+            <h2 class="section-title" data-fr="Projets IA & Data Phares" data-en="Featured AI & Data Projects">Projets IA & Data Phares</h2>
+            <div class="projects-grid">
+                <div class="project-card card-3d">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="project-title" data-fr="Plateforme d'Assistant Carrière IA" data-en="AI-based Career Assistant Platform">Plateforme d'Assistant Carrière IA</h3>
+                    <ul class="project-description">
+                        <li data-fr="Pipeline RAG + LLM pour analyser les CV" data-en="RAG + LLM pipeline to analyze CVs">Pipeline RAG + LLM pour analyser les CV</li>
+                        <li data-fr="Évaluation des profils et recommandations" data-en="Profile evaluation and recommendations">Évaluation des profils et recommandations</li>
+                        <li data-fr="Entretien virtuel avec feedback personnalisé" data-en="Virtual interview with personalized feedback">Entretien virtuel avec feedback personnalisé</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Hugging Face</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">FAISS</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Django</span>
+                    </div>
+                </div>
+
+                <div class="project-card card-3d">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="project-title" data-fr="Système de Reconnaissance de Plaques Tunisiennes" data-en="Tunisian License Plate Recognition System">Système de Reconnaissance de Plaques Tunisiennes</h3>
+                    <ul class="project-description">
+                        <li data-fr="Détection + OCR via vision par ordinateur" data-en="Detection + OCR using computer vision">Détection + OCR via vision par ordinateur</li>
+                        <li data-fr="Pipeline YOLO pour la détection précise" data-en="YOLO pipeline for precise detection">Pipeline YOLO pour la détection précise</li>
+                        <li data-fr="Chatbot RAG + LLM pour réponses automatiques" data-en="RAG + LLM chatbot for automatic answers">Chatbot RAG + LLM pour réponses automatiques</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">YOLO</span>
+                        <span class="tag">Roboflow</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Django</span>
+                    </div>
+                </div>
+
+                <div class="project-card card-3d">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="project-title" data-fr="Prédiction de Probabilité de Réclamation d'Assurance" data-en="Insurance Claim Probability Prediction">Prédiction de Probabilité de Réclamation d'Assurance</h3>
+                    <ul class="project-description">
+                        <li data-fr="Modèle ML pour prédire les réclamations" data-en="ML model to predict claims">Modèle ML pour prédire les réclamations</li>
+                        <li data-fr="Évaluation des risques clients" data-en="Customer risk assessment">Évaluation des risques clients</li>
+                        <li data-fr="Visualisations de l'importance des variables" data-en="Feature importance visualizations">Visualisations de l'importance des variables</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Matplotlib</span>
+                    </div>
+                </div>
+                <!--
+                <div class="project-card card-3d">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="project-title" data-fr="Application de Gestion de Centre de Formation" data-en="Training Center Management Web App">Application de Gestion de Centre de Formation</h3>
+                    <p class="project-description" data-fr="Application web de gestion d'un centre de formation (Spring Boot + React), avec gestion des sessions, des formateurs et des apprenants." data-en="Training center management web app (Spring Boot + React), handling sessions, trainers and learners.">Application web de gestion d'un centre de formation (Spring Boot + React), avec gestion des sessions, des formateurs et des apprenants.</p>
+                    <div class="project-tech">
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">React</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">REST API</span>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interface 2: Why Capgemini -->
+    <section id="capgemini" class="section capgemini-section">
+        <div class="capgemini-background">
+            <div class="capgemini-blob capgemini-blob-1"></div>
+            <div class="capgemini-blob capgemini-blob-2"></div>
+        </div>
+        
+        <div class="container">
+            <div class="capgemini-header">
+                <h1 class="capgemini-title" data-fr="Pourquoi j'ai choisi Capgemini Engineering" data-en="Why I chose Capgemini Engineering">Pourquoi j'ai choisi Capgemini Engineering</h1>
+                <p class="capgemini-subtitle" data-fr="Un environnement pour construire l'avenir grâce à l'IA, la data et l'ingénierie." data-en="An environment to build the future with AI, data and engineering.">Un environnement pour construire l'avenir grâce à l'IA, la data et l'ingénierie.</p>
+                <div class="capgemini-slogan">
+                    <span class="slogan-text">Get the future you want</span>
+                </div>
+            </div>
+
+            <div class="reasons-grid">
+                <div class="reason-card card-3d">
+                    <div class="reason-number">01</div>
+                    <h3 class="reason-title" data-fr="Une culture d'ingénierie forte, tournée vers l'IA et la data" data-en="Strong engineering culture, with a focus on AI and data">Une culture d'ingénierie forte, tournée vers l'IA et la data</h3>
+                    <ul class="reason-text">
+                        <li data-fr="Au cœur des projets d'ingénierie et R&D" data-en="At the heart of engineering and R&D projects">Au cœur des projets d'ingénierie et R&D</li>
+                        <li data-fr="Culture solide + méthodes industrielles (revues de code, qualité, CI/CD)" data-en="Strong culture + industrial practices (code reviews, quality, CI/CD)">Culture solide + méthodes industrielles (revues de code, qualité, CI/CD)</li>
+                        <li data-fr="Fort investissement sur data et IA" data-en="Strong investment in data and AI">Fort investissement sur data et IA</li>
+                        <li data-fr="L'environnement idéal pour évoluer" data-en="The ideal environment to grow">L'environnement idéal pour évoluer</li>
+                    </ul>
+                </div>
+
+                <div class="reason-card card-3d">
+                    <div class="reason-number">02</div>
+                    <h3 class="reason-title" data-fr="Des projets concrets à fort impact" data-en="Real-world, high-impact projects">Des projets concrets à fort impact</h3>
+                    <ul class="reason-text">
+                        <li data-fr="Secteurs variés (industrie, télécoms, services...)" data-en="Various sectors (industry, telecom, services...)">Secteurs variés (industrie, télécoms, services...)</li>
+                        <li data-fr="Impact direct sur l'expérience client" data-en="Direct impact on customer experience">Impact direct sur l'expérience client</li>
+                        <li data-fr="PFE utile, connecté à des besoins réels" data-en="Useful PFE, connected to real needs">PFE utile, connecté à des besoins réels</li>
+                        <li data-fr="Contribuer à de vraies améliorations" data-en="Contribute to real improvements">Contribuer à de vraies améliorations</li>
+                    </ul>
+                </div>
+
+                <div class="reason-card card-3d">
+                    <div class="reason-number">03</div>
+                    <h3 class="reason-title" data-fr="Un terrain idéal pour apprendre et construire ma carrière" data-en="The right place to learn and build my career">Un terrain idéal pour apprendre et construire ma carrière</h3>
+                    <ul class="reason-text">
+                        <li data-fr="Apprendre auprès d'ingénieurs expérimentés" data-en="Learn from experienced engineers">Apprendre auprès d'ingénieurs expérimentés</li>
+                        <li data-fr="Structurer mes pratiques (architecture, tests, documentation)" data-en="Structure my practices (architecture, testing, documentation)">Structurer mes pratiques (architecture, tests, documentation)</li>
+                        <li data-fr="Livrer des solutions IA prêtes pour la production" data-en="Deliver production-ready AI solutions">Livrer des solutions IA prêtes pour la production</li>
+                        <li data-fr="Vision alignée : 'Get the future you want'" data-en="Aligned vision: 'Get the future you want'">Vision alignée : 'Get the future you want'</li>
+                    </ul>
+                </div>
+
+                <div class="reason-card card-3d">
+                    <div class="reason-number">04</div>
+                    <h3 class="reason-title" data-fr="Une forte cohérence avec mon profil" data-en="A strong match with my profile">Une forte cohérence avec mon profil</h3>
+                    <ul class="reason-text">
+                        <li data-fr="Profil hybride : IA (NLP, vision, Transformers)" data-en="Hybrid profile: AI (NLP, vision, Transformers)">Profil hybride : IA (NLP, vision, Transformers)</li>
+                        <li data-fr="Analyse de données + développement full-stack" data-en="Data analysis + full-stack development">Analyse de données + développement full-stack</li>
+                        <li data-fr="Comprendre technique, donnée et produit" data-en="Understanding technology, data and product">Comprendre technique, donnée et produit</li>
+                        <li data-fr="PFE chez Capgemini : étape logique et ambitieuse" data-en="PFE at Capgemini: logical and ambitious step">PFE chez Capgemini : étape logique et ambitieuse</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interface 3: PFE Topic -->
+    <section id="pfe" class="section pfe-section">
+        <div class="pfe-background">
+            <div class="pfe-blob pfe-blob-1"></div>
+            <div class="pfe-blob pfe-blob-2"></div>
+            <div class="pfe-blob pfe-blob-3"></div>
+        </div>
+
+        <div class="container">
+            <div class="pfe-header">
+                <h1 class="pfe-title" data-fr="Sujet de PFE – Application IA pour l'analyse automatisée des avis clients" data-en="PFE Topic – AI-powered application for automated customer review analysis">Sujet de PFE – Application IA pour l'analyse automatisée des avis clients</h1>
+                <p class="pfe-subtitle" data-fr="De la collecte d'avis en ligne jusqu'au tableau de bord interactif." data-en="From online review collection to an interactive dashboard.">De la collecte d'avis en ligne jusqu'au tableau de bord interactif.</p>
+            </div>
+
+            <!-- Topic Understanding -->
+            <div class="pfe-block card-3d">
+                <h2 class="pfe-block-title" data-fr="Compréhension du Sujet" data-en="Understanding the Topic">Compréhension du Sujet</h2>
+                <p class="pfe-block-text" data-fr="L'objectif du projet est de développer une application web basée sur l'IA capable de collecter automatiquement des avis clients en ligne (restaurants et cafés), de les nettoyer et de les structurer, puis de les analyser. Les modèles d'IA doivent : classifier les avis en positifs, négatifs ou neutres, extraire les mots-clés et les thèmes récurrents, et faire ressortir les tendances dans le temps. Les résultats seront présentés dans un tableau de bord interactif permettant aux responsables de suivre la satisfaction, d'identifier les points forts et de détecter rapidement les problèmes récurrents." data-en="The goal of the project is to develop an AI-powered web application that automatically collects online customer reviews (for restaurants and cafés), cleans and structures them, and then analyzes them. The AI models should: classify reviews as positive, negative or neutral, extract recurring keywords and themes, and highlight trends over time. The results will be presented in an interactive dashboard so that managers can track satisfaction, identify strengths and quickly detect recurring issues.">L'objectif du projet est de développer une application web basée sur l'IA capable de collecter automatiquement des avis clients en ligne (restaurants et cafés), de les nettoyer et de les structurer, puis de les analyser. Les modèles d'IA doivent :<br>
+                • classifier les avis en positifs, négatifs ou neutres,<br>
+                • extraire les mots-clés et les thèmes récurrents,<br>
+                • faire ressortir les tendances dans le temps.<br><br>
+                Les résultats seront présentés dans un tableau de bord interactif permettant aux responsables de suivre la satisfaction, d'identifier les points forts et de détecter rapidement les problèmes récurrents.</p>
+            </div>
+
+            <!-- Why this topic -->
+            <div class="pfe-block card-3d">
+                <h2 class="pfe-block-title" data-fr="Pourquoi ce sujet ?" data-en="Why this topic?">Pourquoi ce sujet ?</h2>
+                <p class="pfe-block-text" data-fr="Ce sujet est parfaitement aligné avec mon parcours et mes centres d'intérêt. Lors de mon stage de fin d'études chez MRC Survey, j'ai déjà mis en place une analyse de sentiments multilingue avec un taux de précision d'environ 88 %, ainsi que des tableaux de bord pour visualiser les résultats. J'ai également travaillé sur plusieurs projets de NLP et de vision par ordinateur (TrOCR, YOLO, RAG + LLM, assistants IA). J'aime transformer des données textuelles brutes en indicateurs actionnables. Ce sujet me permet de combiner trois dimensions qui me motivent beaucoup : le NLP, l'analyse de données et le développement web full-stack." data-en="This topic is perfectly aligned with my background and interests. During my end-of-studies internship at MRC Survey, I implemented multilingual sentiment analysis with about 88% accuracy and built dashboards to visualize the results. I also worked on several NLP and computer vision projects (TrOCR, YOLO, RAG + LLM, AI assistants). I enjoy turning raw textual data into actionable insights. This topic allows me to combine three dimensions that strongly motivate me: NLP, data analysis and full-stack web development.">Ce sujet est parfaitement aligné avec mon parcours et mes centres d'intérêt. Lors de mon stage de fin d'études chez MRC Survey, j'ai déjà mis en place une analyse de sentiments multilingue avec un taux de précision d'environ 88 %, ainsi que des tableaux de bord pour visualiser les résultats. J'ai également travaillé sur plusieurs projets de NLP et de vision par ordinateur (TrOCR, YOLO, RAG + LLM, assistants IA). J'aime transformer des données textuelles brutes en indicateurs actionnables. Ce sujet me permet de combiner trois dimensions qui me motivent beaucoup : le NLP, l'analyse de données et le développement web full-stack.</p>
+            </div>
+
+            <!-- Roadmap -->
+            <div class="pfe-roadmap">
+                <h2 class="pfe-roadmap-title" data-fr="Roadmap – Comment Réussir ce Projet" data-en="Roadmap – How to Succeed">Roadmap – Comment Réussir ce Projet</h2>
+                
+                <div class="roadmap-steps">
+                    <div class="roadmap-step card-3d">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title" data-fr="Compréhension des besoins et des indicateurs" data-en="Understanding needs and KPIs">Compréhension des besoins et des indicateurs</h3>
+                            <ul class="step-description">
+                                <li data-fr="Clarifier les besoins métiers" data-en="Clarify business needs">Clarifier les besoins métiers</li>
+                                <li data-fr="Quels types d'avis et canaux cibler" data-en="Which reviews and channels to target">Quels types d'avis et canaux cibler</li>
+                                <li data-fr="Définir les indicateurs clés (satisfaction, thèmes, évolution)" data-en="Define key indicators (satisfaction, themes, evolution)">Définir les indicateurs clés (satisfaction, thèmes, évolution)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-connector"></div>
+
+                    <div class="roadmap-step card-3d">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title" data-fr="Collecte des avis" data-en="Review collection">Collecte des avis</h3>
+                            <ul class="step-description">
+                                <li data-fr="APIs ou scraping (Scrapy / Playwright)" data-en="APIs or scraping (Scrapy / Playwright)">APIs ou scraping (Scrapy / Playwright)</li>
+                                <li data-fr="Respect des contraintes légales" data-en="Respecting legal constraints">Respect des contraintes légales</li>
+                                <li data-fr="Sauvegarde dans PostgreSQL" data-en="Storage in PostgreSQL">Sauvegarde dans PostgreSQL</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-connector"></div>
+
+                    <div class="roadmap-step card-3d">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title" data-fr="Nettoyage et prétraitement" data-en="Cleaning and preprocessing">Nettoyage et prétraitement</h3>
+                            <ul class="step-description">
+                                <li data-fr="Nettoyage (encodage, HTML, emojis)" data-en="Cleaning (encoding, HTML, emojis)">Nettoyage (encodage, HTML, emojis)</li>
+                                <li data-fr="Détection de langue et normalisation" data-en="Language detection and normalization">Détection de langue et normalisation</li>
+                                <li data-fr="Gestion des doublons et du bruit" data-en="Handling duplicates and noise">Gestion des doublons et du bruit</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-connector"></div>
+
+                    <div class="roadmap-step card-3d">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 class="step-title" data-fr="Modèles IA – Sentiment et thématiques" data-en="AI models – Sentiment and topics">Modèles IA – Sentiment et thématiques</h3>
+                            <ul class="step-description">
+                                <li data-fr="Baseline ML + fine-tuning Transformers" data-en="ML baseline + Transformers fine-tuning">Baseline ML + fine-tuning Transformers</li>
+                                <li data-fr="Classification sentiments (positif/négatif/neutre)" data-en="Sentiment classification (positive/negative/neutral)">Classification sentiments (positif/négatif/neutre)</li>
+                                <li data-fr="Extraction thèmes (TF-IDF, embeddings, clustering)" data-en="Topic extraction (TF-IDF, embeddings, clustering)">Extraction thèmes (TF-IDF, embeddings, clustering)</li>
+                                <li data-fr="Évaluation (accuracy, précision, rappel, F1-score)" data-en="Evaluation (accuracy, precision, recall, F1-score)">Évaluation (accuracy, précision, rappel, F1-score)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-connector"></div>
+
+                    <div class="roadmap-step card-3d">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3 class="step-title" data-fr="Tableau de bord interactif" data-en="Interactive dashboard and UX">Tableau de bord interactif</h3>
+                            <ul class="step-description">
+                                <li data-fr="Backend (Django/Laravel) + Frontend (React/Vue)" data-en="Backend (Django/Laravel) + Frontend (React/Vue)">Backend (Django/Laravel) + Frontend (React/Vue)</li>
+                                <li data-fr="Filtres (période, lieu, sentiment, thème, source)" data-en="Filters (time, location, sentiment, theme, source)">Filtres (période, lieu, sentiment, thème, source)</li>
+                                <li data-fr="Graphiques et indicateurs synthétiques" data-en="Charts and summary KPIs">Graphiques et indicateurs synthétiques</li>
+                                <li data-fr="Compréhension rapide pour utilisateurs métier" data-en="Quick understanding for business users">Compréhension rapide pour utilisateurs métier</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-connector"></div>
+
+                    <div class="roadmap-step card-3d">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3 class="step-title" data-fr="Évaluation, itération et déploiement" data-en="Evaluation, iteration and deployment">Évaluation, itération et déploiement</h3>
+                            <ul class="step-description">
+                                <li data-fr="Comparer résultats vs attentes métiers" data-en="Compare results vs business expectations">Comparer résultats vs attentes métiers</li>
+                                <li data-fr="Recueillir feedback et améliorer" data-en="Collect feedback and improve">Recueillir feedback et améliorer</li>
+                                <li data-fr="Conteneurisation avec Docker" data-en="Containerization with Docker">Conteneurisation avec Docker</li>
+                                <li data-fr="Documentation et intégration client" data-en="Documentation and client integration">Documentation et intégration client</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closing message -->
+            <div class="pfe-closing">
+                <p class="pfe-closing-text" data-fr="Ce PFE est pour moi l'occasion de mettre en pratique tout ce que j'ai appris en IA, NLP et développement web, dans un cadre exigeant et structuré comme Capgemini Engineering." data-en="For me, this PFE is an opportunity to put everything I have learned in AI, NLP and web development into practice, within a demanding and structured environment like Capgemini Engineering.">Ce PFE est pour moi l'occasion de mettre en pratique tout ce que j'ai appris en IA, NLP et développement web, dans un cadre exigeant et structuré comme Capgemini Engineering.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title" data-fr="Contact" data-en="Contact">Contact</h2>
+            <div class="contact-card card-3d">
+                <div class="contact-info">
+                    <h3 class="contact-name">Ala HSOUNA</h3>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:ala.hassouna.tn@gmail.com">ala.hassouna.tn@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="tel:+21620303033">+216 20 303 033</a>
+                    </div>
+                    <div class="contact-links">
+                        <a href="https://github.com/AlaHassouna" target="_blank" class="contact-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/ala-hassouna" target="_blank" class="contact-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <p class="contact-message" data-fr="Ouvert aux échanges et très motivé pour contribuer à ce projet de PFE chez Capgemini Engineering." data-en="Open to discussion and highly motivated to contribute to this PFE project at Capgemini Engineering.">Ouvert aux échanges et très motivé pour contribuer à ce projet de PFE chez Capgemini Engineering.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ala HSOUNA. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
