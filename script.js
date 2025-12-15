@@ -389,7 +389,7 @@ console.log('%c Contact: ala.hassouna.tn@gmail.com ', 'color: #5A6C7D; font-size
 // ===================================
 
 let currentSlide = 0;
-const slides = ['about', 'capgemini', 'pfe'];
+const slides = ['slide-hero', 'slide-academic', 'slide-skills', 'slide-experience', 'slide-projects', 'slide-thank-you'];
 
 function initPresentationMode() {
     const presentationBtn = document.getElementById('presentationBtn');
@@ -541,17 +541,21 @@ function updateSlides() {
     slides.forEach(slideId => {
         const section = document.getElementById(slideId);
         if (section) {
-            section.classList.remove('active-slide', 'prev-slide');
+            section.classList.remove('active-slide', 'prev-slide', 'slide-transition-fade', 'slide-transition-slide', 'slide-transition-zoom');
             // Reset scroll position
             section.scrollTop = 0;
         }
     });
     
-    // Set current slide as active
+    // Set current slide as active with professional transition
     const currentSection = document.getElementById(slides[currentSlide]);
     if (currentSection) {
         currentSection.classList.add('active-slide');
-        currentSection.classList.add('slide-transition-fade');
+        
+        // Add random professional transition effect
+        const transitions = ['slide-transition-fade', 'slide-transition-slide', 'slide-transition-zoom'];
+        const randomTransition = transitions[Math.floor(Math.random() * transitions.length)];
+        currentSection.classList.add(randomTransition);
         
         // Ensure scroll is at top
         currentSection.scrollTop = 0;
@@ -559,9 +563,12 @@ function updateSlides() {
         // Monitor scroll for indicator visibility
         monitorScroll(currentSection);
         
+        // Animate slide content
+        animateSlideContent(currentSection);
+        
         setTimeout(() => {
-            currentSection.classList.remove('slide-transition-fade');
-        }, 800);
+            currentSection.classList.remove(randomTransition);
+        }, 1000);
     }
     
     // Update slide indicator
@@ -635,6 +642,22 @@ function handleSwipe() {
             navigateSlide(-1);
         }
     }
+}
+
+// Animate slide content for professional appearance
+function animateSlideContent(section) {
+    const elements = section.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2, .fade-in-delay-3, .fade-in-delay-4, .timeline-item, .skill-card, .experience-card, .project-card');
+    
+    elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            el.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, index * 80); // Stagger animation
+    });
 }
 
 // Monitor scroll to show/hide scroll indicator
